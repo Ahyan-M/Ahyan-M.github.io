@@ -1,0 +1,365 @@
+/* Reset all imports to avoid redundancy */
+    @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Quicksand:wght@300..700&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Shadows+Into+Light&family=Titan+One&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Quicksand:wght@300..700&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Shadows+Into+Light&family=Titan+One&display=swap');
+
+/* Body and HTML styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #111; /* Set the background to black */
+    color: white; /* Set the text color to white */
+}
+
+/* Navbar Styles */
+nav {
+    position: relative;
+    top: 15px; /* Align to the top */
+    right: 40px; /* Align to the left */
+    width: 100%; /* Ensure the navbar spans the full width */
+    padding: 10px 20px; /* Add padding to the navbar */
+    display: flex; /* Align items horizontally */
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center items vertically */
+    z-index: 1000; /* Ensure the navbar is on top of other elements */
+}
+
+/* Logo Styles */
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 50px;
+    font-size: 20px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navbar Links */
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Align items horizontally */
+    margin: 0;
+    padding: 0;
+    gap: 20px; /* Space between links */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: white;
+    font-size: 1.2rem;
+    position: relative; /* For the underline animation */
+    padding-bottom: 5px; /* Space for underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for links (underline animation) */
+nav ul li a:hover {
+    color: white;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+/* Expand underline on hover */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Header */
+header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    color: #fff;
+    padding-top: 60px; /* Add padding to avoid content being hidden behind the fixed navbar */
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+    /* Section */
+    section {
+        padding: 100px 20px;
+        text-align: center;
+        background-color: #111; /* Set section background to black */
+        color: white; /* Set text to white */
+    }
+
+    /* Skills Section */
+    #skills {
+        background: #111; /* Background black */
+        text-align: center;
+    }
+
+    /* Skills Tabs */
+    .skills-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .skills-tabs button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        background-color: #444; /* Dark background for tabs */
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 0 10px;
+        border-radius: 5px;
+    }
+
+    .skills-tabs button.active {
+        background-color: #333;
+        color: white;
+    }
+
+    .skills-tabs button:hover {
+        background-color: #888;
+    }
+
+    /* Skills Content */
+    .skills-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-details {
+        display: none;
+        width: 100%;
+    }
+
+    .skills-details.active {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+        justify-items: center; /* Center items horizontally */
+        align-items: center;  /* Center items vertically */
+        max-width: 800px; /* Set a max width for better alignment */
+        margin: 0 auto;  /* Center the grid container */
+    }
+
+    .skills-grid img {
+        width: 100px;  /* Image size */
+        height: 100px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    /* Hover effect for images */
+    .skills-grid img:hover {
+        transform: scale(1.22);
+        cursor: pointer;
+    }
+
+    /* Projects Section */
+    #projects {
+        background: #111; /* Background black */
+        padding: 60px 20px;
+    }
+
+    #projects h2 {
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .project {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        padding: 30px;
+        background: #222; /* Dark background for projects */
+        border-radius: 12px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-info {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .project-info h3 {
+        font-size: 2rem;
+        color: white;
+        margin-bottom: 15px;
+        font-family: 'Red Hat Text', sans-serif;
+    }
+
+    .project-info p {
+        font-size: 1.2rem;
+        color: white;
+        margin-bottom: 15px;
+        line-height: 1.6;
+        font-family: 'Red Hat Text', sans-serif;
+    }
+
+    .project-info .skills-icons img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        display: inline-block;
+    }
+
+    .features h4 {
+        font-size: 1.5rem;
+        color: white;
+        margin-bottom: 10px;
+        font-family: 'Red Hat Text', sans-serif;
+    }
+
+    .features ul {
+        margin: 10px 0 20px;
+        padding-left: 25px;
+    }
+
+    .features ul li {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: white;
+    }
+
+    .repo-link {
+        font-size: 1.2rem;
+        color: #007BFF;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .repo-link:hover {
+        text-decoration: underline;
+    }
+
+    .project-video {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project-video video {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Ensure the video height matches the text block */
+    .project-video video {
+        height: 100%;
+        min-height: 300px;
+        max-height: 500px;
+        object-fit: cover;
+    }
+
+    /* Contact Section Styles */
+    #contact {
+        background: #111; /* Background black */
+        padding: 60px 20px;
+    }
+
+    #contact h2 {
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 40px;
+        text-align: center;
+        font-family: 'Red Hat Text', sans-serif;
+    }
+
+    .contact-details {
+        display: flex;
+        justify-content: center; /* Centers the items horizontally */
+        align-items: center;     /* Vertically aligns the items */
+        gap: 20px;               /* Adds space between each item */
+        flex-wrap: wrap;         /* Allows wrapping on smaller screens */
+        font-family: 'Red Hat Text', sans-serif;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Space between icon and text */
+    }
+
+    .contact-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .contact-item a {
+        font-size: 1rem;
+        color: white; /* Set contact text color to white */
+        text-decoration: none;
+        transition: color 0.3s ease; /* Smooth color transition */
+    }
+
+    .contact-item a:hover {
+        text-decoration: underline;
+        color: #007BFF; /* Highlight color on hover */
+    }
+
+    /* Footer Section */
+    footer {
+        background-color: #222; /* Dark background for footer */
+        color: white; /* White text */
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+        border-top: 1px solid #444; /* Subtle border for footer */
+    }
+
+    footer a {
+        color: #007BFF;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    /* Media Queries for Contact Section */
+    @media (max-width: 768px) {
+        .contact-details {
+            flex-direction: column; /* Stack items vertically on smaller screens */
+            align-items: center;
+            gap: 15px; /* Adjust spacing */
+        }
+
+        .contact-item {
+            text-align: center; /* Center align text for smaller devices */
+        }
+
+        .contact-item img {
+            margin-bottom: 5px; /* Add spacing below icons */
+        }
+    }
